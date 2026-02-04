@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script src="jQuery3.7.1.js"></script>
+</head>
+<body>
+
+    <p style="display:none;">Hello World</p>
+
+    Enter a value: <input id="val1" type="text"><p id="err1"></p> <br>
+    Enter a value: <input id= "val2" type="text"><p id="err2"></p> <br>
+    
+    <button>Get Text</button>
+    <h1></h1>
+
+    <script>
+            $(document).ready(function(){
+                $("#val1").on('input', function(){
+                    if (isNaN($("#val1").val())) {
+                            $("#err1").text("Please enter a number");
+                    }
+                
+
+                });
+
+                $("#val2").on('input', function(){
+                        if (isNaN($("#val2").val())) {
+                                $("#err2").text("Please enter a number");
+                        }
+                    
+
+                });
+
+                $("button").click(function () {
+                    var str1;
+                    var str2;
+
+                    str1 = parseFloat($("#val1").val());
+                    str2 = parseFloat($("#val2").val());
+                    sum = str1 + str2;
+                    
+                    $("h1").text("The sum is " + sum + ".");
+                })
+            });
+
+    </script>
+
+</body>
+</html>

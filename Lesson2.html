@@ -1,0 +1,42 @@
+<html>
+<head>
+    <script src="jQuery3.7.1.js"></script>
+</head>
+<body>
+
+    <p style="display:none;">Hello World</p>
+
+    Enter a value: <input type="text">
+    Enter a value: <input type="text">
+    <button id="clear" style="display:none;">Clear</button><br>
+    <button>Get Text</button>
+    <h1></h1>
+
+    <script>
+        $(document).ready(function () {
+                $("input").on('input', function(){
+                    if($("input").val().length > 0){
+                        $("#clear").show();
+                    } else{
+                        $("#clear").hide();
+                    }
+            });
+
+                $("button").click(function () {
+                    var str1;
+                    var str2;
+                    $("h1").text($("input").val());
+            });
+
+
+
+                $("#clear").click(function (){
+                    $("input").val(' ');
+                    $("#clear").hide();
+            });
+
+        });
+    </script>
+
+</body>
+</html>
